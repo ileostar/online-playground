@@ -1,0 +1,68 @@
+html,
+body,
+#app {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+html{
+  color: rgba(60, 60, 60, 1)
+}
+html.dark {
+  color: rgba(221, 225, 227, 1);
+  background: #121212;
+}
+.dark .mtk1 {
+  color: white !important;
+}
+
+.splitpanes.default-theme .splitpanes__pane {
+  background: transparent;
+}
+.splitpanes.default-theme .splitpanes__splitter {
+  background: transparent;
+  border-color: transparent;
+  min-width: 1rem;
+  min-height: 1rem;
+}
+
+.splitpanes.default-theme .splitpanes__splitter::before,
+.splitpanes.default-theme .splitpanes__splitter::after {
+  opacity: 0.5;
+  background-color: rgba(60, 60, 60, 1);
+}
+
+.splitpanes.default-theme .splitpanes__splitter:hover::before,
+.splitpanes.default-theme .splitpanes__splitter:hover::after {
+  background-color: rgba(252, 252, 252, 1);
+  opacity: 0.5;
+}
+
+.dark .splitpanes.default-theme .splitpanes__splitter::before,
+.dark .splitpanes.default-theme .splitpanes__splitter::after {
+  background-color: rgba(60, 60, 60, 1);
+}
+
+.dark .splitpanes.default-theme .splitpanes__splitter:hover::before,
+.dark .splitpanes.default-theme .splitpanes__splitter:hover::after {
+  background-color: rgba(60, 60, 60, 1);
+}
+
+/* 使用 view-transition-api 黑白主题切换 */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+::view-transition-old(root) {
+  z-index: 1;
+}
+::view-transition-new(root) {
+  z-index: 9999;
+}
+.dark::view-transition-old(root) {
+  z-index: 9999;
+}
+.dark::view-transition-new(root) {
+  z-index: 1;
+}
